@@ -1,10 +1,10 @@
-
 "use client";
 
 import { useEffect, useState } from "react";
 import { useAuth } from "@/context/AuthContext";
 import { Button } from "./ui/button";
 import { useRouter } from "next/navigation";
+import Link from "next/link";
 
 const Navbar = () => {
   const { user, logout } = useAuth();
@@ -14,7 +14,7 @@ const Navbar = () => {
   useEffect(() => {
     if (user?.role === 'Admin') {
       setLinks([
-        { href: '/dashboard', label: 'Dashboard' },
+        { href: '/about', label: 'About' },
         { href: '/settings', label: 'Settings' },
         { href: '/reports', label: 'Reports' },
         { href: '/users', label: 'Users' },
@@ -22,9 +22,9 @@ const Navbar = () => {
       ]);
     } else if (user?.role === 'Client') {
       setLinks([
-        { href: '/dashboard', label: 'Dashboard' },
+        { href: '/about', label: 'About' },
         { href: '/profile', label: 'Profile' },
-        { href: '/support', label: 'Support' },
+        { href: '/contact', label: 'Contact' },
       ]);
     }
   }, [user]);
@@ -39,9 +39,9 @@ const Navbar = () => {
       <ul className="flex space-x-4">
         {links.map((link) => (
           <li key={link.href}>
-            <a href={link.href} className="hover:underline">
+            <Link href={link.href} className="hover:underline">
               {link.label}
-            </a>
+            </Link>
           </li>
         ))}
       </ul>

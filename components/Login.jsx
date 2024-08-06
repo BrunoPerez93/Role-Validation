@@ -5,6 +5,7 @@ import { useAuth } from "../context/AuthContext";
 import { Button } from "./ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "./ui/card";
 import { Input } from "./ui/input";
+import { Label } from "./ui/label";
 
 const Login = () => {
   const router = useRouter();
@@ -27,9 +28,9 @@ const Login = () => {
       const data = await response.json();
 
       if (data.valid) {
-        const userData = { username, role: data.user.role }; 
+        const userData = { username, role: data.user.role };
         login(userData);
-        router.push("/home");
+        router.push("/about");
       } else {
         alert("Invalid username or password");
       }
@@ -40,13 +41,14 @@ const Login = () => {
   };
 
   return (
-    <Card className="w-full max-w-sm">
+    <Card className="w-full md:w-1/3">
       <CardHeader>
         <CardTitle>Login</CardTitle>
       </CardHeader>
       <CardContent>
         <form onSubmit={handleSubmit}>
           <div className="mb-4">
+            <Label htmlFor="text">Username</Label>
             <Input
               type="text"
               name="username"
@@ -56,6 +58,7 @@ const Login = () => {
             />
           </div>
           <div className="mb-4">
+            <Label htmlFor="password">Password</Label>
             <Input
               type="password"
               name="password"
