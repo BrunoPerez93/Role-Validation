@@ -30,7 +30,7 @@ const Login = () => {
       if (data.valid) {
         const userData = { username, role: data.user.role };
         login(userData);
-        router.push("/about");
+        router.push("/pages/about");
       } else {
         alert("Invalid username or password");
       }

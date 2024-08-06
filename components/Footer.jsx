@@ -10,17 +10,17 @@ const Footer = () => {
   return (
     <footer className="p-5 bg-gray-800 text-white mt-3 flex justify-between items-center">
       <div>
-        <ComputerIcon  width={50} height={50}/>
+        <ComputerIcon width={50} height={50} />
       </div>
       <div className="flex md:space-x-3 md:flex-row flex-col space-y-3 md:space-y-0 justify-center items-center">
         <Link href="">
-        <Image src={github} width={50} height={50} />
+          <Image src={github} width={50} height={50} alt="Icono Github" />
         </Link>
         <Link href="">
-          <Image src={facebook} width={50} height={50} />
+          <Image src={facebook} width={50} height={50} alt="Icono Facebook" />
         </Link>
         <Link href="">
-          <Image src={instagram} width={50} height={50} />
+          <Image src={instagram} width={50} height={50} alt="Icono Instagam" />
         </Link>
       </div>
     </footer>

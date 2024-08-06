@@ -1,4 +1,4 @@
-'use client'
+"use client";
 
 import Navbar from "@/components/Navbar";
 import { useAuth } from "@/context/AuthContext";
@@ -11,7 +11,7 @@ const LayoutContent = ({ children }) => {
     <>
       {user && <Navbar />}
       {children}
-      <Footer/>
+      {user && <Footer />}
     </>
   );
 };

@@ -22,17 +22,17 @@ const Navbar = () => {
   useEffect(() => {
     if (user?.role === "Admin") {
       setLinks([
-        { href: "/about", label: "About" },
-        { href: "/settings", label: "Settings" },
-        { href: "/reports", label: "Reports" },
-        { href: "/users", label: "Users" },
-        { href: "/profile", label: "Profile" },
+        { href: "/pages/about", label: "About" },
+        { href: "/pages/settings", label: "Settings" },
+        { href: "/pages/reports", label: "Reports" },
+        { href: "/pages/users", label: "Users" },
+        { href: "/pages/profile", label: "Profile" },
       ]);
     } else if (user?.role === "Client") {
       setLinks([
-        { href: "/about", label: "About" },
-        { href: "/profile", label: "Profile" },
-        { href: "/contact", label: "Contact" },
+        { href: "/pages/about", label: "About" },
+        { href: "/pages/profile", label: "Profile" },
+        { href: "/pages/contact", label: "Contact" },
       ]);
     }
   }, [user]);
