@@ -2,6 +2,7 @@
 
 import Navbar from "@/components/Navbar";
 import { useAuth } from "@/context/AuthContext";
+import Footer from "./Footer";
 
 const LayoutContent = ({ children }) => {
   const { user } = useAuth();
@@ -10,6 +11,7 @@ const LayoutContent = ({ children }) => {
     <>
       {user && <Navbar />}
       {children}
+      <Footer/>
     </>
   );
 };
